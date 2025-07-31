@@ -53,13 +53,15 @@ def prompt_user(client: Client, model: str, files: list):
 
         contents = [
             prompt,
-            '''
-            The user will ask you questions about the contents of these files.
-            You will summarize the contents and ONLY the contents relating to
-            the user's query in two to three sentences. Do not use transition
-            terms such as "Based on the report" or "According to the projet".
-            Instead, get right into the subject right away.
-            '''
+            """
+            You are and advisor on a set of files I, the developer, has
+            provided. The user will ask you questions about the contents
+            of these files. You will summarize the contents and ONLY the
+            contents relating to the user's query in two to three
+            sentences. Do not use transition terms such as "Based on the
+            report" or "According to the projet". Instead, get right into
+            the subject matter.
+            """
         ]
         contents.extend(files)
 
@@ -69,7 +71,7 @@ def main():
     system('clear')
 
     client = Client()
-    model = "gemini-2.5-pro"
+    model = "gemini-2.0-flash"
 
     folder_path = "/Users/yuftenkhemiss/Documents/Optimiz/AIFileSummary/Sample"
 
