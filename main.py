@@ -1,27 +1,18 @@
-from google.genai import Client
+from google.genai import Client as AIAgent
 from pathlib import Path
 from aspose.words import Document
-from os import system
 from time import sleep
-from math import floor
-from shutil import rmtree
+from os import remove, rmdir
+from logger import logger
 
-def load_files(client: Client, folder_path: str):
-    PROGRESS_BAR_LENGTH = 10
-    BORDER_CHAR = "|"
-    EMPTY_CHAR = " "
-    FULL_CHAR = "*"
-
+def load_files(ai_agent: AIAgent, folder_path: str) -> list:
     folder = Path(folder_path)
     files = []
-    number_of_files = 0
 
-    for file in folder.rglob('*'):
-        if file.is_file and file.name != ".DS_Store":
-            number_of_files += 1
+    logger.info("Loading files:")
+    logger.info("\tConversion of Word Documents to PDF files...")
+    logger.info("\tUpload of PDF files to AI Agent...")
 
-    i = 0
-    print(BORDER_CHAR + PROGRESS_BAR_LENGTH * EMPTY_CHAR + BORDER_CHAR)
     for file in folder.rglob('*'):
         if file.is_file() and file.name != ".DS_Store":
             output_path = str(file).replace(".docx", ".pdf", 1).replace(folder_path, folder_path+"Copy", 1)
@@ -29,28 +20,41 @@ def load_files(client: Client, folder_path: str):
             document = Document(str(file))
             document.save(output_path)
 
-            files.append(client.files.upload(file=output_path))
+            logger.info(f"\tConverted {file.name} to {file.name.replace('.docx', '.pdf', 1)}.")
 
-            system('clear')
-            i += 1
-            progress = floor(i / number_of_files * PROGRESS_BAR_LENGTH)
-            print(BORDER_CHAR + progress * FULL_CHAR + (PROGRESS_BAR_LENGTH-progress) * EMPTY_CHAR + BORDER_CHAR)
+            files.append(ai_agent.files.upload(file=output_path))
 
-    print("DOWNLOAD COMPLETE")
+            logger.info(f"\tUploaded {file.name.replace('.docx', '.pdf', 1)} to AI Agent.")
+
+    logger.info("Loading complete.\n")
     sleep(1.5)
-    system('clear')
 
     return files
 
 def delete_files(folder_path: str):
-    rmtree(folder_path + "Copy")
+    logger.info("Cleanup:")
+    logger.info("\tDeleting files...")
 
-def prompt_user(client: Client, model: str, files: list):
+    folder = Path(folder_path + "Copy")
+    for file in folder.rglob('*'):
+        if file.is_file():
+            remove(str(file))
+            logger.info(f"\tDeleted {file.name}.")
+
+    rmdir(folder_path + "Copy")
+
+    logger.info(f"Cleanup complete.\n")
+    sleep(1.5)
+
+def prompt_user(ai_agent: AIAgent, model: str, files: list):
+    logger.info("Initiating AI agent discussion:")
     while True:
+        logger.info("\tPrompting user.")
         prompt = input("Prompt [Press Q to Quit]: ")
         if prompt.upper() == "Q":
-            return
+            break
 
+        logger.info("\tGenerating response...")
         contents = [
             prompt,
             """
@@ -58,26 +62,29 @@ def prompt_user(client: Client, model: str, files: list):
             provided. The user will ask you questions about the contents
             of these files. You will summarize the contents and ONLY the
             contents relating to the user's query in two to three
-            sentences. Do not use transition terms such as "Based on the
-            report" or "According to the projet". Instead, get right into
-            the subject matter.
+            sentences, unless the user requests a longer answer. Do not
+            use transition terms such as "Based on the report" or "According
+            to the projet". Instead, get right into the subject matter.
             """
         ]
         contents.extend(files)
 
-        print(client.models.generate_content(model=model, contents=contents).text)
+        print(ai_agent.models.generate_content(model=model, contents=contents).text)
+        logger.info("\tResponse generated.")
+    logger.info("AI Agent discussion terminated\n")
+    sleep(1.5)
 
 def main():
-    system('clear')
-
-    client = Client()
+    ai_agent = AIAgent()
     model = "gemini-2.0-flash"
 
     folder_path = "/Users/yuftenkhemiss/Documents/Optimiz/AIFileSummary/Sample"
 
-    files = load_files(client, folder_path)
-    prompt_user(client, model, files)
+    files = load_files(ai_agent, folder_path)
+    prompt_user(ai_agent, model, files)
     delete_files(folder_path)
+
+    logger.info("Program closed.")
 
 if __name__ == "__main__":
     main()
