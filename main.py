@@ -1,5 +1,10 @@
-def main():
-    pass
+from sample_ai import generate_prompt
 
-if __name__ == "__main__":
-    main()
+while True:
+    try:
+        message = input("Chat:\n\t")
+    except KeyboardInterrupt:
+        print()
+        break
+
+    print(generate_prompt(message))
