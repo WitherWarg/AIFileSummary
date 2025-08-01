@@ -1,0 +1,77 @@
+(2025-08-01 11:01:59,349 - INFO) Loading files:
+(2025-08-01 11:01:59,349 - INFO) 	Conversion of Word Documents to PDF files...
+(2025-08-01 11:01:59,349 - INFO) 	Upload of PDF files to AI Agent...
+(2025-08-01 11:02:01,433 - INFO) 	Converted Weekly_Status_Report April 14 to April 17.docx to Weekly_Status_Report April 14 to April 17.pdf.
+(2025-08-01 11:02:02,663 - INFO) 	Uploaded Weekly_Status_Report April 14 to April 17.pdf to AI Agent.
+(2025-08-01 11:02:02,832 - INFO) 	Converted Weekly_Status_Report July 21st to July 25th.docx to Weekly_Status_Report July 21st to July 25th.pdf.
+(2025-08-01 11:02:04,716 - INFO) 	Uploaded Weekly_Status_Report July 21st to July 25th.pdf to AI Agent.
+(2025-08-01 11:02:04,862 - INFO) 	Converted Weekly_Status_Report June 16 to June 20.docx to Weekly_Status_Report June 16 to June 20.pdf.
+(2025-08-01 11:02:05,998 - INFO) 	Uploaded Weekly_Status_Report June 16 to June 20.pdf to AI Agent.
+(2025-08-01 11:02:06,153 - INFO) 	Converted Weekly_Status_Report May 5 to May 9.docx to Weekly_Status_Report May 5 to May 9.pdf.
+(2025-08-01 11:02:07,068 - INFO) 	Uploaded Weekly_Status_Report May 5 to May 9.pdf to AI Agent.
+(2025-08-01 11:02:07,199 - INFO) 	Converted Weekly_Status_Report March 31 to April 4.docx to Weekly_Status_Report March 31 to April 4.pdf.
+(2025-08-01 11:02:08,144 - INFO) 	Uploaded Weekly_Status_Report March 31 to April 4.pdf to AI Agent.
+(2025-08-01 11:02:08,297 - INFO) 	Converted Weekly_Status_Report June 9 to June 13.docx to Weekly_Status_Report June 9 to June 13.pdf.
+(2025-08-01 11:02:09,559 - INFO) 	Uploaded Weekly_Status_Report June 9 to June 13.pdf to AI Agent.
+(2025-08-01 11:02:09,702 - INFO) 	Converted Weekly_Status_Report June 2 to June 6.docx to Weekly_Status_Report June 2 to June 6.pdf.
+(2025-08-01 11:02:10,834 - INFO) 	Uploaded Weekly_Status_Report June 2 to June 6.pdf to AI Agent.
+(2025-08-01 11:02:10,975 - INFO) 	Converted Weekly_Status_Report May 26 to May 30.docx to Weekly_Status_Report May 26 to May 30.pdf.
+(2025-08-01 11:02:12,100 - INFO) 	Uploaded Weekly_Status_Report May 26 to May 30.pdf to AI Agent.
+(2025-08-01 11:02:12,254 - INFO) 	Converted Weekly_Status_Report June 30th to July 4th.docx to Weekly_Status_Report June 30th to July 4th.pdf.
+(2025-08-01 11:02:13,377 - INFO) 	Uploaded Weekly_Status_Report June 30th to July 4th.pdf to AI Agent.
+(2025-08-01 11:02:13,509 - INFO) 	Converted Weekly_Status_Report April 7 to April 11.docx to Weekly_Status_Report April 7 to April 11.pdf.
+(2025-08-01 11:02:14,635 - INFO) 	Uploaded Weekly_Status_Report April 7 to April 11.pdf to AI Agent.
+(2025-08-01 11:02:14,768 - INFO) 	Converted Weekly_Status_Report June 23 to June 27.docx to Weekly_Status_Report June 23 to June 27.pdf.
+(2025-08-01 11:02:15,788 - INFO) 	Uploaded Weekly_Status_Report June 23 to June 27.pdf to AI Agent.
+(2025-08-01 11:02:15,935 - INFO) 	Converted Weekly_Status_Report May 19 to May 23.docx to Weekly_Status_Report May 19 to May 23.pdf.
+(2025-08-01 11:02:16,978 - INFO) 	Uploaded Weekly_Status_Report May 19 to May 23.pdf to AI Agent.
+(2025-08-01 11:02:17,110 - INFO) 	Converted Weekly_Status_Report April 21 to April 25.docx to Weekly_Status_Report April 21 to April 25.pdf.
+(2025-08-01 11:02:18,330 - INFO) 	Uploaded Weekly_Status_Report April 21 to April 25.pdf to AI Agent.
+(2025-08-01 11:02:18,463 - INFO) 	Converted Weekly_Status_Report July 7th to July 11th.docx to Weekly_Status_Report July 7th to July 11th.pdf.
+(2025-08-01 11:02:19,750 - INFO) 	Uploaded Weekly_Status_Report July 7th to July 11th.pdf to AI Agent.
+(2025-08-01 11:02:19,885 - INFO) 	Converted Weekly_Status_Report April 28 to May 2.docx to Weekly_Status_Report April 28 to May 2.pdf.
+(2025-08-01 11:02:21,446 - INFO) 	Uploaded Weekly_Status_Report April 28 to May 2.pdf to AI Agent.
+(2025-08-01 11:02:21,571 - INFO) 	Converted Weekly_Status_Report March 17 to March 21.docx to Weekly_Status_Report March 17 to March 21.pdf.
+(2025-08-01 11:02:22,612 - INFO) 	Uploaded Weekly_Status_Report March 17 to March 21.pdf to AI Agent.
+(2025-08-01 11:02:22,760 - INFO) 	Converted Weekly_Status_Report March 10 to March 14.docx to Weekly_Status_Report March 10 to March 14.pdf.
+(2025-08-01 11:02:23,965 - INFO) 	Uploaded Weekly_Status_Report March 10 to March 14.pdf to AI Agent.
+(2025-08-01 11:02:24,087 - INFO) 	Converted Weekly_Status_Report March 24 to March 28.docx to Weekly_Status_Report March 24 to March 28.pdf.
+(2025-08-01 11:02:25,143 - INFO) 	Uploaded Weekly_Status_Report March 24 to March 28.pdf to AI Agent.
+(2025-08-01 11:02:25,272 - INFO) 	Converted Weekly_Status_Report July 14th to July 18th.docx to Weekly_Status_Report July 14th to July 18th.pdf.
+(2025-08-01 11:02:26,485 - INFO) 	Uploaded Weekly_Status_Report July 14th to July 18th.pdf to AI Agent.
+(2025-08-01 11:02:26,614 - INFO) 	Converted Weekly_Status_Report May 12 to May 16.docx to Weekly_Status_Report May 12 to May 16.pdf.
+(2025-08-01 11:02:27,632 - INFO) 	Uploaded Weekly_Status_Report May 12 to May 16.pdf to AI Agent.
+(2025-08-01 11:02:27,634 - INFO) Loading complete.
+
+(2025-08-01 11:02:29,139 - INFO) Beginning AI agent discussion:
+(2025-08-01 11:02:29,139 - INFO) 	Prompting user.
+(2025-08-01 11:02:38,352 - INFO) 	Generating response...
+(2025-08-01 11:02:51,256 - INFO) 	Response generated.
+(2025-08-01 11:02:51,256 - INFO) 	Prompting user.
+(2025-08-01 11:03:02,663 - INFO) AI Agent discussion has ended.
+
+(2025-08-01 11:03:04,169 - INFO) Cleanup:
+(2025-08-01 11:03:04,169 - INFO) 	Deleting files...
+(2025-08-01 11:03:04,172 - INFO) 	Deleted Weekly_Status_Report June 23 to June 27.pdf.
+(2025-08-01 11:03:04,173 - INFO) 	Deleted Weekly_Status_Report March 10 to March 14.pdf.
+(2025-08-01 11:03:04,173 - INFO) 	Deleted Weekly_Status_Report July 7th to July 11th.pdf.
+(2025-08-01 11:03:04,174 - INFO) 	Deleted Weekly_Status_Report April 14 to April 17.pdf.
+(2025-08-01 11:03:04,175 - INFO) 	Deleted Weekly_Status_Report March 24 to March 28.pdf.
+(2025-08-01 11:03:04,176 - INFO) 	Deleted Weekly_Status_Report May 26 to May 30.pdf.
+(2025-08-01 11:03:04,176 - INFO) 	Deleted Weekly_Status_Report June 2 to June 6.pdf.
+(2025-08-01 11:03:04,177 - INFO) 	Deleted Weekly_Status_Report July 14th to July 18th.pdf.
+(2025-08-01 11:03:04,177 - INFO) 	Deleted Weekly_Status_Report April 7 to April 11.pdf.
+(2025-08-01 11:03:04,178 - INFO) 	Deleted Weekly_Status_Report June 9 to June 13.pdf.
+(2025-08-01 11:03:04,179 - INFO) 	Deleted Weekly_Status_Report May 5 to May 9.pdf.
+(2025-08-01 11:03:04,180 - INFO) 	Deleted Weekly_Status_Report July 21st to July 25th.pdf.
+(2025-08-01 11:03:04,182 - INFO) 	Deleted Weekly_Status_Report June 30th to July 4th.pdf.
+(2025-08-01 11:03:04,183 - INFO) 	Deleted Weekly_Status_Report May 19 to May 23.pdf.
+(2025-08-01 11:03:04,184 - INFO) 	Deleted Weekly_Status_Report March 31 to April 4.pdf.
+(2025-08-01 11:03:04,185 - INFO) 	Deleted Weekly_Status_Report April 28 to May 2.pdf.
+(2025-08-01 11:03:04,185 - INFO) 	Deleted Weekly_Status_Report May 12 to May 16.pdf.
+(2025-08-01 11:03:04,185 - INFO) 	Deleted Weekly_Status_Report June 16 to June 20.pdf.
+(2025-08-01 11:03:04,186 - INFO) 	Deleted Weekly_Status_Report March 17 to March 21.pdf.
+(2025-08-01 11:03:04,186 - INFO) 	Deleted Weekly_Status_Report April 21 to April 25.pdf.
+(2025-08-01 11:03:04,187 - INFO) Cleanup complete.
+
+(2025-08-01 11:03:05,691 - INFO) Program closed.

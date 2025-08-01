@@ -47,7 +47,7 @@ def delete_files(folder_path: str):
     sleep(1.5)
 
 def prompt_user(ai_agent: AIAgent, model: str, files: list):
-    logger.info("Initiating AI agent discussion:")
+    logger.info("Beginning AI agent discussion:")
     while True:
         logger.info("\tPrompting user.")
         prompt = input("Prompt [Press Q to Quit]: ")
@@ -71,12 +71,12 @@ def prompt_user(ai_agent: AIAgent, model: str, files: list):
 
         print(ai_agent.models.generate_content(model=model, contents=contents).text)
         logger.info("\tResponse generated.")
-    logger.info("AI Agent discussion terminated\n")
+    logger.info("AI Agent discussion has ended.\n")
     sleep(1.5)
 
 def main():
     ai_agent = AIAgent()
-    model = "gemini-2.0-flash"
+    model = "gemini-2.5-pro"
 
     folder_path = "/Users/yuftenkhemiss/Documents/Optimiz/AIFileSummary/Sample"
 
@@ -85,6 +85,9 @@ def main():
     delete_files(folder_path)
 
     logger.info("Program closed.")
+
+# exporting api key automatically
+# exporting ai messages to .txt
 
 if __name__ == "__main__":
     main()
