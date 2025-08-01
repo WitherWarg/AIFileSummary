@@ -86,7 +86,6 @@ def main():
 
     logger.info("Program closed.")
 
-# exporting api key automatically
 # exporting ai messages to .txt
 
 if __name__ == "__main__":

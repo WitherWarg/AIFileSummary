@@ -5,8 +5,9 @@ This project uses Google's Gemini AI to scan and summarizes a list of reports ma
 ## Requirements
 
 - Python 3.7 or higher
+- `pip` (packaged with Python)
 - `git`
-- `pip` (comes with Python)
+- `make` (pre-installed on MacOS and Linux)
 
 ## Installation
 
@@ -27,7 +28,7 @@ This is for those who want to prevent installing packages that interfere with ot
 python -m venv venv
 ```
 
-#### MacOs/Linux
+#### MacOS/Linux
 
 ```bash
 source venv/bin/activate
@@ -50,12 +51,12 @@ pip install -r requirements.txt
 To run the program:
 
 ```bash
-python main.py
+make
 ```
 
 ## Notes
 
-If you encounter permission or dependency issues, try upgrading pip:
+If you encounter permission or dependency issues, try upgrading `pip`:
 
 ```bash
 pip install --upgrade pip
