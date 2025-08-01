@@ -1,5 +1,7 @@
 key.txt
 .DS_Store
-/__pycache__
-/Sample
-/SampleCopy
+__pycache__
+Sample
+SampleCopy
+logs/*
+!logs/.gitignore
