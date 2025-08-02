@@ -77,7 +77,7 @@ def prompt_user(ai_agent: AIAgent, model: str, files: list):
             use transition terms such as "Based on the report" or
             "According to the project". Instead, get right into the
             subject matter. If the user asks you to export your response
-            as a file, begin your response with the following text:
+            as a file, YOU MUST begin your response with the following text:
             "{EXPORT_PREFIX_FORMAT}". Format it as a raw text file and make.
             """,
             prompt
@@ -109,12 +109,11 @@ def prompt_user(ai_agent: AIAgent, model: str, files: list):
 
 def main():
     ai_agent = AIAgent()
-    model = "gemini-2.5-flash"
 
     folder_path = "/Users/yuftenkhemiss/Documents/Optimiz/AIFileSummary/Sample"
 
     files = load_files(ai_agent, folder_path)
-    prompt_user(ai_agent, model, files)
+    prompt_user(ai_agent, "gemini-2.5-pro", files)
     delete_files(folder_path)
 
     logger.info("Program closed.")
