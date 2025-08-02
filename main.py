@@ -1,9 +1,10 @@
 from google.genai import Client as AIAgent
 from pathlib import Path
 from aspose.words import Document
-from time import sleep
 from os import remove, rmdir
 from logger import logger
+from re import search
+from os.path import exists
 
 def load_files(ai_agent: AIAgent, folder_path: str) -> list:
     folder = Path(folder_path)
@@ -27,7 +28,6 @@ def load_files(ai_agent: AIAgent, folder_path: str) -> list:
             logger.info(f"\tUploaded {file.name.replace('.docx', '.pdf', 1)} to AI Agent.")
 
     logger.info("Loading complete.\n")
-    sleep(1.5)
 
     return files
 
@@ -44,10 +44,22 @@ def delete_files(folder_path: str):
     rmdir(folder_path + "Copy")
 
     logger.info(f"Cleanup complete.\n")
-    sleep(1.5)
+
+def get_unique_filename(filename):
+    counter = 1
+    while exists(filename):
+        filename = f"{filename}{counter}.txt"
+        counter += 1
+    return filename
 
 def prompt_user(ai_agent: AIAgent, model: str, files: list):
     logger.info("Beginning AI agent discussion:")
+
+    conversation_history = []
+
+    EXPORT_PREFIX_FORMAT = r"Response must be exported.\nFile name: [Insert File Name Here].txt\n"
+    EXPORT_PREFIX = "Response must be exported.\nFile name: "
+
     while True:
         logger.info("\tPrompting user.")
         prompt = input("Prompt [Press Q to Quit]: ")
@@ -56,27 +68,48 @@ def prompt_user(ai_agent: AIAgent, model: str, files: list):
 
         logger.info("\tGenerating response...")
         contents = [
-            prompt,
-            """
+            f"""
             You are and advisor on a set of files I, the developer, has
-            provided. The user will ask you questions about the contents
-            of these files. You will summarize the contents and ONLY the
-            contents relating to the user's query in two to three
-            sentences, unless the user requests a longer answer. Do not
-            use transition terms such as "Based on the report" or "According
-            to the projet". Instead, get right into the subject matter.
-            """
+            provided. If it exists, past conversation history with the
+            user will be provided. The user will ask you questions about
+            the contents of these files. You will summarize the contents
+            and ONLY the contents relating to the user's query. Do not
+            use transition terms such as "Based on the report" or
+            "According to the project". Instead, get right into the
+            subject matter. If the user asks you to export your response
+            as a file, begin your response with the following text:
+            "{EXPORT_PREFIX_FORMAT}". Format it as a raw text file and make.
+            """,
+            prompt
         ]
         contents.extend(files)
+        contents.extend(conversation_history)
 
-        print(ai_agent.models.generate_content(model=model, contents=contents).text)
-        logger.info("\tResponse generated.")
+        response = ai_agent.models.generate_content(model=model, contents=contents).text
+
+        conversation_history.append(prompt)
+        conversation_history.append(response)
+
+        if response.startswith(EXPORT_PREFIX):
+            logger.info("\tExporting file...")
+            response = response.removeprefix(EXPORT_PREFIX)
+            
+            filename = get_unique_filename(search(r"\b\S+\.txt\b", response).group())
+
+            with open(filename, "w") as output_file:
+                output_file.write(response.removeprefix(filename + '\n'))
+
+            logger.info("\tExporting complete.")
+            print(f"Response has been exported to {filename}.")
+        else:
+            print(response)
+            logger.info("\tResponse generated.")
+
     logger.info("AI Agent discussion has ended.\n")
-    sleep(1.5)
 
 def main():
     ai_agent = AIAgent()
-    model = "gemini-2.5-pro"
+    model = "gemini-2.5-flash"
 
     folder_path = "/Users/yuftenkhemiss/Documents/Optimiz/AIFileSummary/Sample"
 
@@ -85,8 +118,6 @@ def main():
     delete_files(folder_path)
 
     logger.info("Program closed.")
-
-# exporting ai messages to .txt
 
 if __name__ == "__main__":
     main()
