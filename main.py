@@ -45,7 +45,7 @@ def delete_files(folder_path: str):
 
     logger.info(f"Cleanup complete.\n")
 
-def get_unique_filename(filename):
+def get_unique_filename(filename: str):
     counter = 1
     while exists(filename):
         filename = f"{filename}{counter}.txt"
