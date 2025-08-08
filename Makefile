@@ -24,3 +24,6 @@ clean:
 	else \
 		echo "Aborted."; \
 	fi
+
+dependencies:
+	@pip freeze > requirements.txt
