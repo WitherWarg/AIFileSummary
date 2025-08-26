@@ -1,7 +1,6 @@
 from google.genai import Client as AIAgent
 from pathlib import Path
 from aspose.words import Document
-from os import remove
 from logger import logger
 from re import search
 from os.path import exists, splitext
@@ -9,7 +8,7 @@ from shutil import rmtree
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from threading import Lock
 from math import ceil
-import time
+from time import perf_counter
 
 def get_all_files(folder_path: str):
     for file in Path(folder_path).rglob('*'):
@@ -153,13 +152,13 @@ def main():
 
     folder_path = "/Users/yuftenkhemiss/Documents/Optimiz/AIFileSummary/Sample"
 
-    start = time.perf_counter()
+    start = perf_counter()
 
-    files = load_files(ai_agent, folder_path, max_threads=50, files_per_thread=1)
+    files = load_files(ai_agent, folder_path, max_threads=50, files_per_thread=2)
 
-    end = time.perf_counter()
+    end = perf_counter()
 
-    logger.info(f"File loading time: {end - start:.6f} seconds")
+    logger.info(f"File loading time: {end - start:.2f} seconds")
 
     prompt_user(ai_agent, model="gemini-2.5-pro", files=files)
     delete_files(folder_path)
